@@ -33,7 +33,11 @@ export default function SearchItems() {
         placeholder="Search for book"
         onChange={handleSearchChange}
       />
-      <button className="btn btn-primary" onClick={SearchBook}>
+      <button
+        className="btn btn-primary"
+        onClick={SearchBook}
+        style={{ width: "10rem", marginTop: "1rem" }}
+      >
         Search
       </button>
     </div>

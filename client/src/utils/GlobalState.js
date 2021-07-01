@@ -10,6 +10,11 @@ const reducer = (state, action) => {
         ...state,
         SearchedBooks: action.books,
       };
+    case "SAVEBOOKS":
+      return {
+        ...state,
+        SavedBooks: action.books,
+      };
     default:
       return state;
   }

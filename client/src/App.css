@@ -7,5 +7,20 @@
 .allResults {
   background-color: #e8e8e8;
   padding: 2%;
-  border-bottom: 2px black;
+  margin-bottom: 5rem;
+}
+
+.book {
+  border-bottom: solid black;
+  border-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.bookDetails,
+.buttons {
+  display: inline-block;
+}
+
+.buttons {
+  float: right;
 }
