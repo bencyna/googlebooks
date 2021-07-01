@@ -10,7 +10,6 @@ export default function SavedBooks() {
     const getBooks = async () => {
       try {
         const Books = await API.GetSavedBooks();
-
         dispatch({
           type: "SAVEBOOKS",
           books: Books.data,
@@ -18,10 +17,14 @@ export default function SavedBooks() {
       } catch (error) {
         console.log(error);
       }
-      console.log(state.SavedBooks);
     };
     getBooks();
   }, []);
+
+  const deleteBook = async (e) => {
+    e.preventDefault();
+    const Book = await API.DeleteBook(e.target.id);
+  };
 
   return (
     <div
@@ -40,7 +43,7 @@ export default function SavedBooks() {
           <div>
             {state.SavedBooks.map((book) => {
               return (
-                <div key={book.title} className="book">
+                <div key={book._id} className="book">
                   <div
                     className="title col-md-12"
                     style={{ marginBottom: "1rem" }}
@@ -50,7 +53,13 @@ export default function SavedBooks() {
                       <small>Written by {book.authors}</small>
                     </div>
                     <div className="buttons">
-                      <button className="btn btn-outline-danger">Delete</button>
+                      <button
+                        className="btn btn-outline-danger"
+                        id={book._id}
+                        onClick={deleteBook}
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                   <div className="synopsis row">
