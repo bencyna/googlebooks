@@ -24,6 +24,15 @@ export default function SavedBooks() {
   const deleteBook = async (e) => {
     e.preventDefault();
     const Book = await API.DeleteBook(e.target.id);
+    try {
+      const Books = await API.GetSavedBooks();
+      dispatch({
+        type: "SAVEBOOKS",
+        books: Books.data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

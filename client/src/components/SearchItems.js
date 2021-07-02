@@ -13,6 +13,9 @@ export default function SearchItems() {
   const SearchBook = async () => {
     try {
       const Books = await API.GetBooks(search);
+      if (Books.data.items.length === 0) {
+        return;
+      }
       dispatch({
         type: "SEARCHBOOK",
         books: Books.data.items,
@@ -27,7 +30,6 @@ export default function SearchItems() {
   return (
     <div className="row searchForm">
       <h6>Book Search</h6>
-      <label>Book</label>
       <input
         type="text"
         placeholder="Search for book"

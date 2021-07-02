@@ -13,12 +13,18 @@ export default function SearchResults() {
         saveBook = state.SearchedBooks[i];
       }
     }
-    const book = await API.SaveBook({
-      title: saveBook.volumeInfo.title,
-      authors: saveBook.volumeInfo.authors,
-      description: saveBook.volumeInfo.description,
-      image: saveBook.volumeInfo.imageLinks.thumbnail,
-    });
+    try {
+      const book = await API.SaveBook({
+        title: saveBook.volumeInfo.title,
+        authors: saveBook.volumeInfo.authors,
+        description: saveBook.volumeInfo.description,
+        image: saveBook.volumeInfo.imageLinks.thumbnail,
+      });
+      alert("Book saved!");
+    } catch (error) {
+      alert("Oops, unable to save, sorry bout that");
+      console.log(error);
+    }
   };
 
   return (

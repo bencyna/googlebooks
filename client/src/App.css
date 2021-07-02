@@ -24,3 +24,8 @@
 .buttons {
   float: right;
 }
+
+h1,
+h3 {
+  font-family: Monospace;
+}
