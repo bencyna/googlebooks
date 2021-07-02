@@ -1,29 +1,40 @@
-# Create React Express App
+# Google Books
 
-## About This Boilerplate
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Description
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+Google Books utlises is a full-stack mern application that utilises google books api to search for a save your favourite book
 
-## Starting the app locally
+## Table Of Contents
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+- [Installation](##Installation)
+- [Usage](##Usage)
+- [License](##License)
+- [Contributing](##Contributing)
+- [Tests](##Tests)
+- [Questions](##Questions)
 
-```
-npm install
-```
+## Installation
 
-This should install node modules within the server and the client folder.
+Users can search for the title of a book, this prompts an API call to retrieve 10 books max that contain that title, each book is displayed and can be saved. When saved an API call to mongoDB is made a retreives all saved books
 
-After both installations complete, run the following command in your terminal:
+## Usage
 
-```
-npm start
-```
+    ![image of react codel](./assets/screenshot1.jpg)
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+## License
 
-## Deployment (Heroku)
+This project is covered under the BSD License
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+## Contributing
+
+[bencyna](https://github.com/bencyna/)
+
+## Tests
+
+go to heroku app
+
+## Questions
+
+If you have any questions about this project, you can veiw my github account at https://github.com/bencyna or find me on linked in at https://www.linkedin.com/in/bencyna567/
